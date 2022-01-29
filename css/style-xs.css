@@ -1,0 +1,17 @@
+#reservation {
+    flex-direction: column;
+}
+.slider_container {
+    width: 300px;
+}
+.item {
+    width: 300px;
+    height: 200px;
+}
+.left, .right{
+    transform: scale3d(1,0.65,1);
+    margin:0 -112px 0 -112px;
+}
+.item p {
+    font-size: 14px;
+}

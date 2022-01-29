@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+		<link media="screen and (max-width: 768px)" rel="stylesheet" href="css/style-xs.css">
+        <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+        <script src='https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js'></script>
+        <title>Location de vélos</title>
+    </head>
+    <body>
+        <div id="contenu">
+            <h1>Location de vélos</h1>
+            <section id="slider">
+                <div class="slider_container">
+                    <div class="slider_item">
+                        <div class="item">
+                            <div class="bg"></div>
+                            <p>Bienvenue sur le site de location de vélo de la ville de Lyon</p>
+                        </div>
+                    </div>
+                    <div class="slider_item">
+                        <div class="item">
+                            <div class="bg"></div>
+                            <p>Vous pouvez séléctionner une station à l'aide de la carte afin de réserver un vélo<br>
+                            Une légende vous indique les différents types de marqueurs correspondants aux stations</p>
+                        </div>
+                    </div>
+                    <div class="slider_item">
+                        <div class="item">
+                            <div class="bg"></div>
+                            <p>Le formulaire vous permet de connaître l'état de la station séléctionnée et d'y réserver un vélo en indiquant votre nom, prénom et signature</p>
+                        </div>
+                    </div>
+                    <div class="slider_item">
+                        <div class="item">
+                            <div class="bg"></div>
+                            <p>Vous ne pouvez réserver qu'un vélo à la fois<br>
+                            Chaque nouvelle réservation remplacera la précedente et vous aurez 20 minutes pour récupérer le vélo</p>
+                        </div>
+                    </div>
+                    <div class="slider_item">
+                            <div class="item">
+                                <div class="bg"></div>
+                                <p>Rafraichissez la page pour actualiser la liste des stations et leurs disponibilitées.</p>
+                            </div>
+                        </div>
+                </div>
+                <button id="prev"><i class="fas fa-angle-left"></i></button>
+                <button id="lecture"><i class="fas fa-pause"></i></button>
+                <button id="next"><i class="fas fa-angle-right"></i></button>
+            </section>
+            <section id="reservation">
+                <div id="carte">
+                    <div id="map"></div>
+                    <div id="legende">
+                        <div class="marqueur">
+                            <div class="station dispo"></div>
+                            <p>Vélo disponible</p>
+                        </div>
+                        <div class="marqueur">
+                            <div class="station indispo"></div>
+                            <p>Aucun vélo disponible</p>
+                        </div>
+                        <div class="marqueur">
+                            <div class="station work"></div>
+                            <p>Station fermée</p>
+                        </div>
+                        <div class="marqueur">
+                            <div class="station focus"></div>
+                            <p>Sation séléctionnée</p>
+                        </div>
+                        <div class="marqueur">
+                            <div class="station reservee"></div>
+                            <p>Vélo réservé</p>
+                        </div>
+                    </div>
+                </div>
+                <form>
+                    <fieldset id="form">
+                        <legend>Détails de la station</legend>
+                        <p>Adresse : <span class="adresse">...</span></p>
+                        <p class="status"><span class="places">...</span> place(s)<br>
+                            <span class="reste">...</span> vélo(s) disponible(s)</p>
+                        <label><span>Nom : </span><input required type="text" name="nom" placeholder="Entrez votre nom"></label>
+                        <label><span>Prénom : </span><input required type="text" name="prenom" placeholder="Entrez votre prénom"></label>
+                        <input type="submit" name="reserver" value="Réserver" id="reserver">
+                    </fieldset>
+                </form>
+            </section>
+            <section id="info-reservation"></section>
+        </div>
+        <script src="js/ajax.js"></script>
+        <script src="js/fonction.js"></script>
+        <script src="js/station.js"></script>
+        <script src="js/local.js"></script>
+        <script src="js/session.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/signature.js"></script>
+        <script src="js/reservation.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/init.js"></script>
+    </body>
+</html>
